@@ -38,8 +38,13 @@ state.
 ***********************************************************************/
 
 function filterUserProfiles(users, filter) {
-  // Your code here 
+  let result = [];
+  users.forEach(user => {
+    if(filter(user)) result.push(user.name);
+  })
+  return result;
 }
+
 
 // To test the example, comment out the code below and run the following command
 // in your terminal: node problems/05-filter-user-profiles.js

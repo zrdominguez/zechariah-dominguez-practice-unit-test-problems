@@ -12,11 +12,21 @@ duplicateCharMinCount("What about a longer string?", 3) // ["a", "t", " "]
 ***********************************************************************/
 
 function countCharacters(string) {
-	// Your code here 
+ const copy = string.split('');
+ let obj={};
+ copy.forEach(letter => {
+	obj[letter] = !obj[letter] ? 1 : obj[letter] + 1;
+ })
+ return obj;
 }
 
 function duplicateCharMinCount(string, minCount) {
-	// Your code here 
+	const countLetters = countCharacters(string);
+	let result = [];
+	for(const [key, val] of Object.entries(countLetters)){
+		if(val >= minCount) result.push(key);
+	}
+	return result;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

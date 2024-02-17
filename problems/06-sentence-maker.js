@@ -11,7 +11,7 @@ sentenceMaker('I', 'love', 'coding'); // 'I love coding!'
 sentenceMaker('The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'); // 'The quick brown fox jumps over the lazy dog!'
 ***********************************************************************/
 
-// Your code here 
+const sentenceMaker = (...str) => str.join(' ') + '!'
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

@@ -16,8 +16,15 @@ You may not use Array's `map()`, `filter()`, or `forEach()` methods.
 ***********************************************************************/
 
 function pickyMyMap(arr, cb) {
-	// Your code here 
+	const newArr = [];
+	for(const el of arr){
+		if(cb(el)) newArr.push(cb(el));
+	}
+	return newArr;
 }
+
+const nums = [1, 2, 3, 4];
+pickyMyMap(nums, (num) => num - 2); // [-1, 1, 2]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
